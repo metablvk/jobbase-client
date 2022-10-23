@@ -1,9 +1,16 @@
-function App() {
+import { Route, Routes } from 'react-router-dom';
+
+import Navigation from './routes/navigation/navigation.component';
+import Home from './routes/home/home.component';
+
+const App = () => {
   return (
-    <div className='App'>
-      <h1>Hello from jobbase!</h1>
-    </div>
+    <Routes>
+      <Route path='/' element={<Navigation />}>
+        <Route path='/' index element={<Home />} />
+      </Route>
+    </Routes>
   );
-}
+};
 
 export default App;
