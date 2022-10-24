@@ -1,10 +1,14 @@
-import { Container } from '../../components/container/container.styles';
+import { useEffect } from 'react';
+import { HomeContainer } from './home.styles';
 
 const Home = () => {
+  useEffect(() => {
+    document.title = 'Jobbase | Find Jobs';
+  });
   return (
-    <Container>
-      <h1>hello from home</h1>
-    </Container>
+    <HomeContainer>
+      <h1>Explore</h1>
+    </HomeContainer>
   );
 };
 

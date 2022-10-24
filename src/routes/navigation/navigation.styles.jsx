@@ -1,10 +1,13 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { Container } from '../../components/container/container.styles';
 
 export const NavigationContainer = styled(Container)`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-bottom: 0;
+  padding-bottom: 0;
 `;
 
 export const LogoContainer = styled.div`
@@ -24,10 +27,13 @@ export const CloseButton = styled.button`
   cursor: pointer;
 `;
 
+export const NavLink = styled(Link)``;
+
 export const NavItem = styled.li`
   margin-bottom: 2.4rem;
   padding-bottom: 1.2rem;
-  border-bottom: 0.1rem solid #444;
+  border-bottom: 0.3rem solid #444;
+  padding-left: 1rem;
 `;
 
 export const SideNav = styled.ul`
@@ -45,6 +51,15 @@ export const SideNav = styled.ul`
   padding-top: 8rem;
   ${({ menuState }) => (menuState ? 'width: 25rem' : '')};
 
+  ${({ currentLocation }) =>
+    currentLocation === '/'
+      ? `
+        ${NavItem}:nth-child(2) {
+          border-bottom: 0.3rem solid #2BA500;
+        }
+      `
+      : ``}
+
   @media screen and (min-width: 1200px) {
     width: initial;
     flex-direction: row;
@@ -56,6 +71,7 @@ export const SideNav = styled.ul`
       &:last-of-type {
         margin-right: 0;
       }
+      padding-left: 0;
     }
     ${CloseButton} {
       display: none;

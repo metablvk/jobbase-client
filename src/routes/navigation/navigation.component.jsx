@@ -1,13 +1,13 @@
 // Navigation Component
 import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 
 // Styled Components
 import {
   NavigationContainer,
   LogoContainer,
   SideNav,
+  NavLink,
   NavItem,
   CloseButton,
   Hamburger,
@@ -16,6 +16,7 @@ import {
 
 const Navigation = () => {
   const [menuState, setMenuState] = useState(false);
+  const location = useLocation();
   const toggleMenu = () => {
     setMenuState(!menuState);
   };
@@ -23,19 +24,19 @@ const Navigation = () => {
     <>
       <NavigationContainer>
         <LogoContainer>
-          <Link to='/'>Jobbase</Link>
+          <NavLink to='/'>Jobbase</NavLink>
         </LogoContainer>
-        <SideNav menuState={menuState}>
+        <SideNav menuState={menuState} currentLocation={location.pathname}>
           <CloseButton onClick={toggleMenu}>X</CloseButton>
 
           <NavItem>
-            <Link to='/'>Find Jobs</Link>
+            <NavLink to='/'>Find Jobs</NavLink>
           </NavItem>
           <NavItem>
-            <Link to='/upload-resume'>Upload your resume</Link>
+            <NavLink to='/upload-resume'>Upload your resume</NavLink>
           </NavItem>
           <NavItem>
-            <Link to='/sign-in'>Sign In</Link>
+            <NavLink to='/sign-in'>Sign in</NavLink>
           </NavItem>
         </SideNav>
         <Hamburger onClick={toggleMenu} menuState={menuState}>

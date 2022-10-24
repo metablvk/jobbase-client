@@ -6,6 +6,9 @@ html, body {
   color: #444444;
 }
 
+* {
+  box-sizing: border-box;
+}
 h1 {
   font-size: 4.338rem;
   margin-bottom: 1.2rem;
