@@ -11,7 +11,7 @@ html, body {
 }
 h1 {
   font-size: 4.338rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 2.4rem;
 }
 
 a {
@@ -20,3 +20,17 @@ a {
   text-decoration: none;
 }
 
+span {
+  font-size: 1.6rem;
+}
+
+input {
+  display: block;
+  margin-bottom: 1.2rem;
+  padding: 1.2rem;
+  font-size: 1.6rem;
+}
+
+button {
+  border: none;
+}

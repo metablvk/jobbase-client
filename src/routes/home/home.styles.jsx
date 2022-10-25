@@ -6,6 +6,9 @@ export const HomeContainer = styled(Container)`
     font-size: 2rem;
     font-weight: 600;
   }
-
   margin-top: 3.2rem;
+
+  @media screen and (min-width: 1200px) {
+    margin-top: 0;
+  }
 `;

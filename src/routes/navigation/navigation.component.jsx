@@ -36,7 +36,7 @@ const Navigation = () => {
             <NavLink to='/upload-resume'>Upload your resume</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink to='/sign-in'>Sign in</NavLink>
+            <NavLink to='/auth'>Sign in</NavLink>
           </NavItem>
         </SideNav>
         <Hamburger onClick={toggleMenu} menuState={menuState}>

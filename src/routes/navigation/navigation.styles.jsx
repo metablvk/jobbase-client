@@ -8,6 +8,9 @@ export const NavigationContainer = styled(Container)`
   flex-wrap: wrap;
   margin-bottom: 0;
   padding-bottom: 0;
+  @media screen and (min-width: 1200px) {
+    margin-top: 4.4rem;
+  }
 `;
 
 export const LogoContainer = styled.div`
@@ -55,6 +58,12 @@ export const SideNav = styled.ul`
     currentLocation === '/'
       ? `
         ${NavItem}:nth-child(2) {
+          border-bottom: 0.3rem solid #2BA500;
+        }
+      `
+      : currentLocation === '/auth'
+      ? `
+         ${NavItem}:nth-child(4) {
           border-bottom: 0.3rem solid #2BA500;
         }
       `
