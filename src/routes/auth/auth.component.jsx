@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import SignIn from '../../components/sign-in/sign-in.component';
-import Register from '../../components/register/register.component';
+import SignInForm from '../../components/sign-in-form/sign-in-form.component';
+import RegisterForm from '../../components/register-form/register-form.component';
 import { AuthContainer, Link } from './auth.styles';
 
 const Auth = () => {
@@ -12,12 +12,12 @@ const Auth = () => {
     <AuthContainer>
       {hasAnAccount ? (
         <>
-          <SignIn />
+          <SignInForm />
           <Link onClick={handleClick}>Don't have an account?</Link>
         </>
       ) : (
         <>
-          <Register />
+          <RegisterForm />
           <Link onClick={handleClick}>Have an account?</Link>
         </>
       )}

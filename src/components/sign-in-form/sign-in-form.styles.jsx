@@ -10,5 +10,6 @@ export const Form = styled.form`
     background: #2ba500;
     color: #fff;
     font-size: 1.8rem;
+    cursor: pointer;
   }
 `;
