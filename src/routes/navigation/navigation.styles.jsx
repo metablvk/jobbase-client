@@ -65,7 +65,7 @@ export const SideNav = styled.ul`
       `
       : currentLocation === '/auth'
       ? `
-         ${NavItem}:nth-child(4) {
+         ${NavItem}:nth-child(3) {
           border-bottom: 0.3rem solid #2BA500;
         }
       `

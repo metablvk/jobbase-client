@@ -40,11 +40,12 @@ const Navigation = () => {
           <NavItem>
             <NavLink to='/'>Find Jobs</NavLink>
           </NavItem>
-          <NavItem>
-            <NavLink to='/upload-resume'>Upload your resume</NavLink>
-          </NavItem>
+
           {currentUser ? (
             <>
+              <NavItem>
+                <NavLink to='/upload-resume'>Upload your resume</NavLink>
+              </NavItem>
               <NavItem>
                 <NavLink as='span' onClick={signOutUser}>
                   Sign out
