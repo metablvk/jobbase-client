@@ -1,6 +1,11 @@
 // Navigation Component
 import { useState } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
+import { selectCurrentUser } from '../../store/user/user.selector';
+
+import { signOutUser } from '../../utils/firebase/firebase.utils';
 
 // Styled Components
 import {
@@ -16,10 +21,13 @@ import {
 
 const Navigation = () => {
   const [menuState, setMenuState] = useState(false);
+  const currentUser = useSelector(selectCurrentUser);
+  console.log(currentUser);
   const location = useLocation();
   const toggleMenu = () => {
     setMenuState(!menuState);
   };
+
   return (
     <>
       <NavigationContainer>
@@ -35,9 +43,19 @@ const Navigation = () => {
           <NavItem>
             <NavLink to='/upload-resume'>Upload your resume</NavLink>
           </NavItem>
-          <NavItem>
-            <NavLink to='/auth'>Sign in</NavLink>
-          </NavItem>
+          {currentUser ? (
+            <>
+              <NavItem>
+                <NavLink as='span' onClick={signOutUser}>
+                  Sign out
+                </NavLink>
+              </NavItem>
+            </>
+          ) : (
+            <NavItem>
+              <NavLink to='/auth'>Sign in</NavLink>
+            </NavItem>
+          )}
         </SideNav>
         <Hamburger onClick={toggleMenu} menuState={menuState}>
           <Bar />

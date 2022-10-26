@@ -30,7 +30,9 @@ export const CloseButton = styled.button`
   cursor: pointer;
 `;
 
-export const NavLink = styled(Link)``;
+export const NavLink = styled(Link)`
+  cursor: pointer;
+`;
 
 export const NavItem = styled.li`
   margin-bottom: 2.4rem;
