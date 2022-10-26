@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 // Firebase utils
 import { onAuthStateChangedListener } from './utils/firebase/firebase.utils';
@@ -7,12 +9,14 @@ import { onAuthStateChangedListener } from './utils/firebase/firebase.utils';
 import Navigation from './routes/navigation/navigation.component';
 import Home from './routes/home/home.component';
 import Auth from './routes/auth/auth.component';
-import { useEffect } from 'react';
+
+import { setCurrentUser } from './store/user/user.action';
 
 const App = () => {
+  const dispatch = useDispatch();
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {
-      console.log(user);
+      dispatch(setCurrentUser(user));
     });
     return unsubscribe;
   }, []);
